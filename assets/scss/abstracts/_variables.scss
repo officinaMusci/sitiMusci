@@ -1,0 +1,27 @@
+// Font size
+$font-size: 1rem;
+
+// Spacing
+$spacing: 1rem;
+
+// Colors
+$color-text: #333;
+$color-primary: #007bff;
+$color-primary-light: lighten($color-primary, 30%);
+$color-primary-dark: darken($color-primary, 30%);
+$color-primary-contrast: #fff;
+
+// Box shadow
+$box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+/* CSS global variables */
+:root {
+    --font-size: #{$font-size};
+    --spacing: #{$spacing};
+    --color-text: #{$color-text};
+    --color-primary: #{$color-primary};
+    --color-primary-light: #{$color-primary-light};
+    --color-primary-dark: #{$color-primary-dark};
+    --color-primary-contrast: #{$color-primary-contrast};
+    --box-shadow: #{$box-shadow};
+}

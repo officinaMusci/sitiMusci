@@ -1,0 +1,103 @@
+/*!
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Spock Pro Regular by Los Andes
+ * URL: https://www.myfonts.com/products/pro-regular-spock-227764
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Spock Essential Alt2 Regular Italic by Los Andes
+ * URL: https://www.myfonts.com/products/essential-alt2-regular-italic-spock-228138
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Spock Pro Bold by Los Andes
+ * URL: https://www.myfonts.com/products/pro-bold-spock-227786
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Spock Essential Alt2 Bold Italic by Los Andes
+ * URL: https://www.myfonts.com/products/essential-alt2-bold-italic-spock-228157
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2023 MyFonts Inc. */
+  
+ @font-face {
+    font-family: "SpockProBold";
+    src: url('./../fonts/SpockProBold/font.woff2') format('woff2'), url('./../fonts/SpockProBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "SpockEssentialAlt2BoldItalic";
+    src: url('./../fonts/SpockEssentialAlt2BoldItalic/font.woff2') format('woff2'), url('./../fonts/SpockEssentialAlt2BoldItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "SpockEssentialAlt2RegularItalic";
+    src: url('./../fonts/SpockEssentialAlt2RegularItalic/font.woff2') format('woff2'), url('./../fonts/SpockEssentialAlt2RegularItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "SpockProRegular";
+    src: url('./../fonts/SpockProRegular/font.woff2') format('woff2'), url('./../fonts/SpockProRegular/font.woff') format('woff');
+}
+
+@mixin regular {
+    font-family: "SpockProRegular";
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin bold {
+    font-family: "SpockProBold";
+    font-weight: normal;
+}
+
+@mixin bold-italic {
+    font-family: "SpockEssentialAlt2BoldItalic";
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin italic {
+    font-family: "SpockEssentialAlt2RegularItalic";
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include regular;
+    color: $color-text;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+b, strong {
+    @include bold;
+
+    i, em {
+        @include bold-italic;
+    }
+}
+
+i, em {
+    @include italic;
+
+    b, strong {
+        @include bold-italic;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

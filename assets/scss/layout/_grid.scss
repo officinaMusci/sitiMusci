@@ -1,0 +1,26 @@
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/variables/main.scss";
+
+$grid-columns: 12; // Set number of columns in the grid
+
+$xs-max: 40rem; // Set xs breakpoint's max width
+$sm-max: 64rem; // Set sm breakpoint's max width
+$md-max: 90rem; // Set md breakpoint's max width
+$lg-max: 120rem; // Set lg breakpoint's max width
+
+$gutter: $spacing; // Set gutter size
+
+$content-well-max-width: "none"; // Set the max-width of the content well
+
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/mixins/main.scss";
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/grid";
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/visibility";
+
+main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    article {
+        flex: 1;
+    }
+}

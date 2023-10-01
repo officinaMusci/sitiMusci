@@ -1,0 +1,35 @@
+{
+  "name": "musci-assets",
+  "version": "0.1.0",
+  "description": "Assets for Musci's websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "concurrently --kill-others \"npm run clean:musci.ch\" \"npm run clean:bottega.musci.ch\" \"npm run clean:qr.bottega.musci.ch\"",
+    "clean:musci.ch": "rm -rf ../musci.ch/assets && mkdir ../musci.ch/assets",
+    "clean:bottega.musci.ch": "rm -rf ../bottega.musci.ch/assets && mkdir ../bottega.musci.ch/assets",
+    "clean:qr.bottega.musci.ch": "rm -rf ../qr.bottega.musci.ch/assets && mkdir ../qr.bottega.musci.ch/assets",
+    "copy-fonts": "concurrently --kill-others \"npm run npm run copy-fonts:musci.ch\" \"npm run copy-fonts:bottega.musci.ch\" \"npm run copy-fonts:qr.bottega.musci.ch\"",
+    "copy-fonts:musci.ch": "cp -r fonts ../musci.ch/assets",
+    "copy-fonts:bottega.musci.ch": "cp -r fonts ../bottega.musci.ch/assets",
+    "copy-fonts:qr.bottega.musci.ch": "cp -r fonts ../qr.bottega.musci.ch/assets",
+    "start": "concurrently --kill-others \"npm run start:musci.ch\" \"npm run start:bottega.musci.ch\" \"npm run start:qr.bottega.musci.ch\"",
+    "start:musci.ch": "npm run clean:musci.ch && npm run copy-fonts:musci.ch && sass --watch --update scss:../musci.ch/assets/css",
+    "start:bottega.musci.ch": "npm run clean:bottega.musci.ch && npm run copy-fonts:bottega.musci.ch && sass --watch --update scss:../bottega.musci.ch/assets/css",
+    "start:qr.bottega.musci.ch": "npm run clean:qr.bottega.musci.ch && npm run copy-fonts:qr.bottega.musci.ch && sass --watch --update scss:../qr.bottega.musci.ch/assets/css",
+    "build": "concurrently --kill-others \"npm run build:musci.ch\" \"npm run build:bottega.musci.ch\" \"npm run build:qr.bottega.musci.ch\"",
+    "build:musci.ch": "npm run clean:musci.ch && npm run copy-fonts:musci.ch && sass --no-source-map --style=compressed scss:../musci.ch/assets/css",
+    "build:bottega.musci.ch": "npm run clean:bottega.musci.ch && npm run copy-fonts:bottega.musci.ch && sass --no-source-map --style=compressed scss:../bottega.musci.ch/assets/css",
+    "build:qr.bottega.musci.ch": "npm run clean:qr.bottega.musci.ch && npm run copy-fonts:qr.bottega.musci.ch && sass --no-source-map --style=compressed scss:../qr.bottega.musci.ch/assets/css"
+  },
+  "author": "Danilo Musci",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "sass": "^1.68.0"
+  },
+  "dependencies": {
+    "@drewbot/sass-flexbox-grid": "^2.0.7",
+    "reset-css": "^5.0.2"
+  }
+}
